@@ -9,12 +9,16 @@ html{
 scroll-behavior:smooth;
 }
 
+body{
+overflow-x:hidden;
+}
+
 /* ================= HEADER ================= */
 
 header{
 background:linear-gradient(45deg,#4B0082,#2c003e);
 color:white;
-padding:12px 40px;
+padding:8px 25px;   /* height reduced */
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -23,61 +27,41 @@ width:100%;
 top:0;
 z-index:1000;
 box-shadow:0 4px 15px rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
 }
 
 /* Logo */
 .logo-box{
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 }
 
-/* Logo Design */
 .logo-box img{
-width:70px;
-height:70px;
+width:60px;
+height:60px;
 border-radius:50%;
 border:2px solid #FFD700;
 object-fit:cover;
-
-/* Glow Effect */
-box-shadow:0 0 10px rgba(255,215,0,0.6),
-           0 0 20px rgba(255,215,0,0.4);
-
-/* Smooth Animation */
+box-shadow:0 0 10px rgba(255,215,0,0.6);
 transition:0.4s;
 }
 
-/* Hover Effect 🔥 */
 .logo-box img:hover{
-transform:scale(1.1) rotate(5deg);
-box-shadow:0 0 20px rgba(255,215,0,0.9),
-           0 0 40px rgba(255,215,0,0.6);
+transform:scale(1.1);
 }
 
-/* Company Name */
 .logo-box h2{
 color:#FFD700;
-font-size:22px;
+font-size:18px;
 font-weight:700;
-letter-spacing:1px;
-
-/* Text Glow */
-text-shadow:0 0 8px rgba(255,215,0,0.7);
-
-transition:0.3s;
 }
 
-/* Text Hover Effect */
-.logo-box h2:hover{
-color:white;
-text-shadow:0 0 15px rgba(255,255,255,0.8);
-}
-/* Nav */
+/* NAV */
 nav ul{
 list-style:none;
 display:flex;
-gap:20px;
+gap:15px;
 }
 
 nav ul li a{
@@ -102,8 +86,8 @@ cursor:pointer;
 /* ================= HERO ================= */
 
 .hero{
-margin-top:80px;
-height:90vh;
+margin-top:70px;
+min-height:90vh;
 background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
 url('https://images.unsplash.com/photo-1556157382-97eda2d62296');
 background-size:cover;
@@ -114,131 +98,85 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px 15px;
 }
 
 .hero h1{
-font-size:48px;
-font-weight:700;
+font-size:42px;
 }
 
 .hero p{
-font-size:20px;
-margin:15px 0;
+font-size:18px;
+margin:10px 0;
 }
 
 .hero button{
-padding:12px 25px;
+padding:10px 20px;
 background:#FFD700;
 border:none;
 border-radius:5px;
-font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 }
 
 .hero button:hover{
 background:#e6c200;
-transform:scale(1.05);
 }
 
 /* ================= ABOUT ================= */
 
 .about{
-padding:80px 20px;
-max-width:1100px;
-margin:120px auto;
+padding:60px 20px;
+max-width:1000px;
+margin:100px auto;
 text-align:center;
 border-radius:20px;
 background:white;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-border:2px solid #4B0082;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 .about h2{
 color:#4B0082;
-margin-bottom:20px;
-}
-
-.about ul{
-margin-top:15px;
-list-style:none;
-}
-
-.about ul li{
-margin:10px 0;
 }
 
 /* ================= SERVICES ================= */
 
 .services{
-padding:100px 20px;
-text-align:center;
-background:#f5f5ff;
-}
-
-.service-box{
-display:flex;
-gap:30px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:15px;
-width:300px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-15px) scale(1.05);
-box-shadow:0 20px 40px rgba(0,0,0,0.25);
-}
-
-.card h3{
-color:#4B0082;
-}
-
-.card button{
-margin-top:10px;
-padding:8px 18px;
-background:#4B0082;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-.card button:hover{
-background:#2c003e;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
 padding:80px 20px;
 text-align:center;
 }
 
-.images img{
+.service-box{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
 width:280px;
-margin:10px;
-border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.images img:hover{
-transform:scale(1.1);
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* ================= GALLERY ================= */
+
+.images img{
+width:260px;
+max-width:100%;
+border-radius:10px;
 }
 
 /* ================= FAQ ================= */
 
 .faq{
-padding:80px 20px;
-background:#eee;
+padding:60px 20px;
 }
 
 .faq-item h4{
@@ -246,29 +184,23 @@ background:#4B0082;
 color:white;
 padding:10px;
 border-radius:5px;
-cursor:pointer;
 }
 
 .faq-item p{
 display:none;
 background:white;
 padding:10px;
-margin-top:5px;
-border-radius:5px;
 }
 
 /* ================= CONTACT ================= */
 
 .contact{
-padding:80px 20px;
-text-align:center;
+padding:60px 15px;
 }
 
 iframe{
-width:90%;
+width:100%;
 height:300px;
-border:0;
-margin-top:20px;
 }
 
 /* ================= FOOTER ================= */
@@ -280,55 +212,52 @@ padding:15px;
 text-align:center;
 }
 
-/* ================= FLOATING BUTTONS ================= */
+/* ================= FLOAT BUTTON ================= */
 
-.whatsapp{
+.whatsapp, .call{
 position:fixed;
-bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
-padding:15px;
+padding:12px;
 border-radius:50%;
-font-size:22px;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
-transition:0.3s;
+color:white;
 }
 
-.whatsapp:hover{
-transform:scale(1.1);
+.whatsapp{
+bottom:20px;
+background:#25D366;
 }
 
 .call{
-position:fixed;
 bottom:80px;
-right:20px;
-background:#ff4d4d;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.call:hover{
-transform:scale(1.1);
+background:red;
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:768px){
 
+header{
+padding:6px 15px;
+}
+
+.logo-box img{
+width:45px;
+height:45px;
+}
+
+.logo-box h2{
+font-size:15px;
+}
+
 nav ul{
 display:none;
 flex-direction:column;
 background:#4B0082;
 position:absolute;
-top:60px;
+top:55px;
 right:0;
-width:200px;
-padding:20px;
+width:180px;
+padding:15px;
 }
 
 nav ul.show{
@@ -337,20 +266,18 @@ display:flex;
 
 .menu-toggle{
 display:block;
-color:white;
 }
 
 .hero h1{
-font-size:26px;
+font-size:24px;
 }
 
-.service-box{
-flex-direction:column;
-align-items:center;
+.hero p{
+font-size:14px;
 }
 
 .card{
-width:90%;
+width:95%;
 }
 
 }
